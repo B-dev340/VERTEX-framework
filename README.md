@@ -1,9 +1,9 @@
-# MEVIC
+# VERTEX
 ### Metodología de Evaluación y Validación de la Seguridad Informática
 
 ## Descripción
 
-MEVIC es una propuesta metodológica orientada a la evaluación y validación de la seguridad informática mediante procedimientos organizados, laboratorios prácticos y criterios de análisis que permiten identificar posibles riesgos, documentar hallazgos y evaluar los resultados obtenidos.
+VERTEX es una propuesta metodológica orientada a la evaluación y validación de la seguridad informática mediante procedimientos organizados, laboratorios prácticos y criterios de análisis que permiten identificar posibles riesgos, documentar hallazgos y evaluar los resultados obtenidos.
 
 ## Objetivo
 
@@ -13,7 +13,7 @@ Establecer una metodología estructurada para desarrollar actividades de evaluac
 
 Actualmente, este repositorio contiene:
 
-- **Documento principal:** documentación de la metodología MEVIC y sus componentes.
+- **Documento principal:** documentación de la metodología VERTEX y sus componentes.
 
 El framework técnico y sus elementos de implementación serán incorporados posteriormente.
 
@@ -28,4 +28,3 @@ Las actividades propuestas deben realizarse únicamente en entornos controlados 
 ## Estado del proyecto
 
 En desarrollo.
-
