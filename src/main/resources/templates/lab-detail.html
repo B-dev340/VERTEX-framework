@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Detalle del laboratorio')}"></head>
+
+<body>
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+    <header class="page-hero detail-hero">
+        <div class="container"><a th:href="@{/laboratorios}" class="back-link"><i class="fa-solid fa-arrow-left"></i>
+                Volver a laboratorios</a>
+            <div class="mt-4"><span class="lab-tag" th:text="${lab.category}"></span><span class="lab-date ms-3"
+                    th:text="${#temporals.format(lab.date, 'dd MMMM yyyy')}"></span></div>
+            <h1 th:text="${lab.title}"></h1>
+            <p th:text="${lab.objective}"></p>
+        </div>
+    </header>
+    <main class="section-pad">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <section class="glass-card detail-block"><span class="section-kicker">01 / CONTEXTO</span>
+                        <h2>Introducción</h2>
+                        <p th:text="${lab.introduction}"></p>
+                    </section>
+                    <section class="glass-card detail-block"><span class="section-kicker">02 / PROPÓSITO</span>
+                        <h2>Objetivos</h2>
+                        <ul class="cyber-list">
+                            <li th:each="item : ${lab.objectives}" th:text="${item}"></li>
+                        </ul>
+                    </section>
+                    <section class="glass-card detail-block"><span class="section-kicker">03 / EJECUCIÓN</span>
+                        <h2>Procedimiento</h2>
+                        <ol class="procedure-list">
+                            <li th:each="step : ${lab.procedure}" th:text="${step}"></li>
+                        </ol>
+                    </section>
+                    <section class="glass-card detail-block"><span class="section-kicker">04 / EVIDENCIAS</span>
+
+                        <h2>Galería de Laboratorios</h2>
+                        <p class="text-muted">
+                            Consulta las guías desarrolladas de este laboratorio en formato PDF.
+                        </p>
+
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-4" th:each="pdf : ${lab.evidence}">
+                                <div class="card h-100 shadow-sm border-0">
+
+                                    <!-- Vista previa del PDF -->
+                                    <div class="ratio ratio-4x3 bg-light">
+                                        <iframe th:src="${pdf} + '#toolbar=0&navpanes=0&scrollbar=0'"
+                                            title="Vista previa del laboratorio" loading="lazy" style="border: none;">
+                                        </iframe>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <h6 class="card-title">
+                                            <i class="fas fa-file-pdf text-danger me-2"></i>
+                                            Guía del laboratorio
+                                        </h6>
+
+                                        <a th:href="${pdf}" target="_blank" rel="noopener noreferrer"
+                                            class="btn btn-primary btn-sm w-100">
+                                            <i class="fas fa-external-link-alt me-2"></i>
+                                            Abrir PDF en nueva pestaña
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    </section>
+                    <section class="glass-card detail-block"><span class="section-kicker">05 / HALLAZGOS</span>
+                        <h2>Resultados obtenidos</h2>
+                        <p th:text="${lab.results}"></p>
+                    </section>
+                    <section class="glass-card detail-block"><span class="section-kicker">06 / REFLEXIÓN</span>
+                        <h2>Conclusiones</h2>
+                        <p th:text="${lab.conclusions}"></p>
+                    </section>
+                </div>
+                <aside class="col-lg-4">
+                    <div class="glass-card detail-sidebar">
+                        <h3>Ficha del laboratorio</h3>
+                        <div class="sidebar-row"><span>Dominio</span><strong th:text="${lab.domain}"></strong></div>
+                        <div class="sidebar-row"><span>Duración</span><strong
+                                th:text="${lab.hours + ' horas'}"></strong></div>
+                        <div class="sidebar-row"><span>Fecha</span><strong
+                                th:text="${#temporals.format(lab.date, 'dd/MM/yyyy')}"></strong></div>
+                        <hr class="divider-line">
+                        <h4>Herramientas</h4>
+                        <div class="tag-cloud"><span th:each="tool : ${lab.tools}" th:text="${tool}"></span></div>
+                        <hr class="divider-line">
+                        <h4>Competencias desarrolladas</h4>
+                        <ul class="competency-list">
+                            <li th:each="c : ${lab.competencies}"><i class="fa-solid fa-check"></i><span
+                                    th:text="${c}"></span></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            <div class="lab-navigation mt-5"><a th:if="${previousLab != null}"
+                    th:href="@{/laboratorios/{id}(id=${previousLab.id})}" class="btn btn-outline-cyber"><i
+                        class="fa-solid fa-arrow-left me-2"></i>Anterior</a><span
+                    th:if="${previousLab == null}"></span><a th:if="${nextLab != null}"
+                    th:href="@{/laboratorios/{id}(id=${nextLab.id})}" class="btn btn-cyber">Siguiente<i
+                        class="fa-solid fa-arrow-right ms-2"></i></a></div>
+        </div>
+    </main>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <div th:replace="~{fragments/scripts :: scripts}"></div>
+</body>
+
+</html>

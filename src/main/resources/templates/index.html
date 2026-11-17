@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head('Inicio')}"></head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+  <!-- HERO -->
+  <header id="inicio" class="hero-section">
+    <canvas id="particles"></canvas>
+    <div class="hero-grid"></div>
+
+    <div class="container hero-content">
+
+      <div class="eyebrow" data-aos="fade-up">
+        <span class="pulse-dot"></span>
+        PLATAFORMA ACADÉMICA · CYBERSECURITY
+      </div>
+
+      <div class="row align-items-center gy-5">
+
+        <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+
+          <h1>
+            Framework Educativo de
+            <span class="gradient-text">Ciberseguridad Aplicada</span>
+          </h1>
+
+          <p class="hero-lead">
+            Metodología de aprendizaje práctico basada en laboratorios desarrollados durante el semestre.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+
+            <a href="#framework" class="btn btn-cyber">
+              <i class="fa-solid fa-compass me-2"></i>
+              Explorar framework
+            </a>
+
+            <a th:href="@{/laboratorios}" class="btn btn-outline-cyber">
+              <i class="fa-solid fa-flask me-2"></i>
+              Ver laboratorios
+            </a>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div>
+              <strong class="counter" th:attr="data-count=${totalLabs}">0</strong>
+              <span>Laboratorios</span>
+            </div>
+
+            <div>
+              <strong class="counter" th:attr="data-count=${totalHours}">0</strong>
+              <span>Horas prácticas</span>
+            </div>
+
+            <div>
+              <strong class="counter" th:attr="data-count=${domains.size()}">0</strong>
+              <span>Dominios</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+
+          <div class="hero-visual">
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="core-shield">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>CYBER<br>LAB</span>
+            </div>
+
+            <div class="float-chip chip-a">
+              <i class="fa-solid fa-lock"></i>
+              Protección
+            </div>
+
+            <div class="float-chip chip-b">
+              <i class="fa-solid fa-terminal"></i>
+              Análisis
+            </div>
+
+            <div class="float-chip chip-c">
+              <i class="fa-solid fa-network-wired"></i>
+              Redes
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <a href="#framework" class="scroll-cue">
+      <span></span>
+      Desplázate para explorar
+    </a>
+
+  </header>
+
+  <main>
+
+    <!-- 01. PRESENTACIÓN -->
+    <section id="framework" class="section-pad">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-kicker">01 / PRESENTACIÓN</span>
+
+          <h2>
+            Aprender seguridad
+            <span class="gradient-text">haciendo</span>
+          </h2>
+
+          <p>
+            Un entorno que conecta conceptos, procedimientos y evidencias para convertir la teoría en competencias prácticas.
+          </p>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-4" data-aos="fade-up">
+
+            <article class="glass-card info-card">
+
+              <div class="icon-box cyan">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+
+              <h3>Objetivo general</h3>
+
+              <p>
+                Integrar conocimientos y herramientas de ciberseguridad mediante laboratorios prácticos que permitan reconocer riesgos, analizar escenarios y proponer medidas de protección.
+              </p>
+
+            </article>
+
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+
+            <article class="glass-card info-card">
+
+              <div class="icon-box green">
+                <i class="fa-solid fa-crosshairs"></i>
+              </div>
+
+              <h3>Alcance</h3>
+
+              <p>
+                Fortalecer competencias de reconocimiento, seguridad web, análisis de servicios, investigación digital, gestión de riesgos y respuesta ante incidentes.
+              </p>
+
+            </article>
+
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+
+            <article class="glass-card info-card">
+
+              <div class="icon-box purple">
+                <i class="fa-solid fa-diagram-project"></i>
+              </div>
+
+              <h3>Metodología</h3>
+
+              <p>
+                Aprendizaje progresivo basado en preparación del entorno, ejecución controlada, recolección de evidencias, análisis de resultados y verificación de controles.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 02. ARQUITECTURA -->
+    <section id="arquitectura" class="section-pad section-darker">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-kicker">02 / ARQUITECTURA</span>
+
+          <h2>
+            Ciclo metodológico del
+            <span class="gradient-text">framework</span>
+          </h2>
+
+          <p>
+            Seis fases que organizan el trabajo práctico de forma repetible y documentada.
+          </p>
+
+        </div>
+
+        <div class="timeline">
+
+          <div class="timeline-item" data-aos="fade-right">
+
+            <div class="timeline-node">01</div>
+
+            <div class="glass-card timeline-card">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+
+              <h3>Preparación</h3>
+
+              <p>
+                Definir alcance, objetivos, autorizaciones, herramientas y entorno seguro de laboratorio.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left">
+
+            <div class="timeline-node">02</div>
+
+            <div class="glass-card timeline-card">
+              <i class="fa-solid fa-shield-halved"></i>
+
+              <h3>Prevención</h3>
+
+              <p>
+                Reconocer activos y establecer controles para reducir la probabilidad de incidentes.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="timeline-item" data-aos="fade-right">
+
+            <div class="timeline-node">03</div>
+
+            <div class="glass-card timeline-card">
+              <i class="fa-solid fa-radar"></i>
+
+              <h3>Identificación</h3>
+
+              <p>
+                Detectar superficies de exposición, comportamientos anómalos y posibles debilidades.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left">
+
+            <div class="timeline-node">04</div>
+
+            <div class="glass-card timeline-card">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+              <h3>Análisis</h3>
+
+              <p>
+                Interpretar hallazgos, valorar impacto y relacionar evidencias con riesgos.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="timeline-item" data-aos="fade-right">
+
+            <div class="timeline-node">05</div>
+
+            <div class="glass-card timeline-card">
+              <i class="fa-solid fa-screwdriver"></i>
+
+              <h3>Mitigación</h3>
+
+              <p>
+                Proponer o aplicar medidas correctivas y recomendaciones de seguridad.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="timeline-item" data-aos="fade-left">
+
+            <div class="timeline-node">06</div>
+
+            <div class="glass-card timeline-card">
+              <i class="fa-solid fa-circle-check"></i>
+
+              <h3>Verificación</h3>
+
+              <p>
+                Comprobar los controles, registrar resultados y documentar lecciones aprendidas.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 03. DOMINIOS -->
+    <section id="dominios" class="section-pad">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-kicker">03 / DOMINIOS</span>
+
+          <h2>
+            Áreas de
+            <span class="gradient-text">aprendizaje</span>
+          </h2>
+
+          <p>
+            Dominios que agrupan las capacidades abordadas en las prácticas.
+          </p>
+
+        </div>
+
+        <div class="row g-3">
+
+          <div class="col-sm-6 col-lg-3"
+               th:each="d,iter : ${domains}"
+               data-aos="fade-up"
+               th:attr="data-aos-delay=${iter.index * 50}">
+
+            <article class="glass-card domain-card">
+
+              <div class="domain-icon">
+                <i class="fa-solid" th:classappend="${d.icon}"></i>
+              </div>
+
+              <h3 th:text="${d.name}">Dominio</h3>
+
+              <p th:text="${d.description}"></p>
+
+              <div class="d-flex justify-content-between small mb-2">
+                <span th:text="${d.level}"></span>
+                <span th:text="${d.progress + '%'}"></span>
+              </div>
+
+              <div class="progress cyber-progress">
+                <div class="progress-bar"
+                     th:style="'width:' + ${d.progress} + '%'">
+                </div>
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 04. DASHBOARD -->
+    <section id="estadisticas" class="section-pad section-darker">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-kicker">04 / DASHBOARD</span>
+
+          <h2>
+            Resumen
+            <span class="gradient-text">académico</span>
+          </h2>
+
+          <p>
+            Indicadores generales de las actividades documentadas en la plataforma.
+          </p>
+
+        </div>
+
+        <!-- INDICADORES -->
+        <div class="row g-3 mb-4">
+
+          <div class="col-6 col-lg-3">
+
+            <div class="metric-card">
+              <i class="fa-solid fa-flask"></i>
+
+              <strong th:text="${totalLabs}">0</strong>
+
+              <span>Laboratorios registrados</span>
+            </div>
+
+          </div>
+
+          <div class="col-6 col-lg-3">
+
+            <div class="metric-card">
+              <i class="fa-solid fa-layer-group"></i>
+
+              <strong th:text="${domains.size()}">0</strong>
+
+              <span>Dominios de aprendizaje</span>
+            </div>
+
+          </div>
+
+          <div class="col-6 col-lg-3">
+
+            <div class="metric-card">
+              <i class="fa-solid fa-clock"></i>
+
+              <strong th:text="${totalHours}">0</strong>
+
+              <span>Horas prácticas</span>
+            </div>
+
+          </div>
+
+          <div class="col-6 col-lg-3">
+
+            <div class="metric-card">
+              <i class="fa-solid fa-brain"></i>
+
+              <strong th:text="${totalCompetencies}">0</strong>
+
+              <span>Competencias registradas</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- DATOS REALES DE LOS LABORATORIOS PARA LOS GRÁFICOS -->
+        <div id="lab-chart-data" class="d-none">
+          <div th:each="lab : ${labs}"
+               th:attr="data-domain=${lab.domain},
+                        data-title=${lab.title},
+                        data-date=${lab.date},
+                        data-hours=${lab.hours},
+                        data-competencies=${#lists.size(lab.competencies)},
+                        data-tools=${#lists.size(lab.tools)}">
+          </div>
+        </div>
+
+        <!-- GRÁFICAS -->
+        <div class="row g-4">
+
+          <div class="col-12 col-lg-7">
+
+            <div class="glass-card chart-card">
+
+              <h3>Laboratorios por dominio · barras</h3>
+
+              <div class="chart-container">
+                <canvas id="domainChart"></canvas>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-5">
+
+            <div class="glass-card chart-card">
+
+              <h3>Distribución de competencias · circular</h3>
+
+              <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-6">
+
+            <div class="glass-card chart-card">
+
+              <h3>Mapa de competencias · radar</h3>
+
+              <div class="chart-container">
+                <canvas id="radarChart"></canvas>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-12 col-lg-6">
+
+            <div class="glass-card chart-card">
+
+              <h3>Actividad práctica · línea temporal</h3>
+
+              <div class="chart-container">
+                <canvas id="timelineChart"></canvas>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- MAPA DE COMPETENCIAS GENERADO CON DATOS REALES -->
+        <div class="glass-card skill-map mt-4">
+
+          <h3>Competencias registradas por dominio</h3>
+
+          <p class="text-muted">
+            Cantidad de competencias documentadas en cada área de los laboratorios.
+          </p>
+
+          <div id="skillMapRows"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 05. EVIDENCIAS -->
+    <section id="evidencias" class="section-pad">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-kicker">05 / EVIDENCIAS</span>
+
+          <h2>
+            Del procedimiento a la
+            <span class="gradient-text">evidencia</span>
+          </h2>
+
+          <p>
+            Las capturas y resultados respaldan cada actividad y facilitan su sustentación.
+          </p>
+
+        </div>
+
+        
+<div class="row g-4">
+
+    <div class="col-md-4" th:each="lab : ${labs}">
+
+        <div class="evidence-preview glass-card h-100">
+
+            <!-- Vista previa del PDF -->
+            <div class="ratio ratio-4x3 bg-dark">
+                <iframe
+                    th:src="${lab.evidence[0]} + '#toolbar=0&navpanes=0&scrollbar=0'"
+                    title="Vista previa del PDF"
+                    loading="lazy"
+                    style="border: none;">
+                </iframe>
+            </div>
+
+            <!-- Información del laboratorio -->
+            <div class="p-3">
+
+                <span class="section-kicker"
+                      th:text="${lab.domain}">
+                </span>
+
+                <h3 th:text="${lab.title}"></h3>
+
+                <a th:href="${lab.evidence[0]}"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="text-cyan text-decoration-none">
+                    Ver PDF completo
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+                <div class="mt-2">
+                    <a th:href="@{/laboratorios/{id}(id=${lab.id})}"
+                       class="text-cyan text-decoration-none">
+                        Consultar laboratorio
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+        <div class="text-center mt-4">
+
+          <a th:href="@{/laboratorios}" class="btn btn-outline-cyber">
+            Explorar todos los laboratorios
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 06. CONCLUSIONES -->
+    <section id="conclusiones" class="section-pad section-darker">
+
+      <div class="container">
+
+        <div class="section-heading" data-aos="fade-up">
+
+          <span class="section-kicker">06 / CIERRE</span>
+
+          <h2>
+            Conocimiento que se convierte en
+            <span class="gradient-text">capacidad</span>
+          </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+          <div class="col-md-6">
+
+            <div class="conclusion-item">
+
+              <span>01</span>
+
+              <div>
+                <h3>Aprendizajes obtenidos</h3>
+
+                <p>
+                  Comprensión del enfoque práctico de la ciberseguridad y de la importancia de documentar cada actividad.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="conclusion-item">
+
+              <span>02</span>
+
+              <div>
+                <h3>Habilidades adquiridas</h3>
+
+                <p>
+                  Uso inicial de herramientas técnicas, análisis de información, interpretación de resultados y comunicación de hallazgos.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="conclusion-item">
+
+              <span>03</span>
+
+              <div>
+                <h3>Resultados del semestre</h3>
+
+                <p>
+                  Consolidación de un portafolio organizado de laboratorios, procedimientos y evidencias verificables.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+
+            <div class="conclusion-item">
+
+              <span>04</span>
+
+              <div>
+                <h3>Impacto académico</h3>
+
+                <p>
+                  Integración de fundamentos teóricos con ejercicios controlados que fortalecen el criterio profesional.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="final-banner mt-5">
+
+          <div>
+
+            <span class="section-kicker">FRAMEWORK EDUCATIVO</span>
+
+            <h2>Explora. Analiza. Protege.</h2>
+
+            <p>
+              Un recorrido práctico por los fundamentos de la ciberseguridad aplicada.
+            </p>
+
+          </div>
+
+          <a th:href="@{/laboratorios}" class="btn btn-cyber">
+            Ver portafolio
+            <i class="fa-solid fa-arrow-right ms-2"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div th:replace="~{fragments/footer :: footer}"></div>
+
+  <!-- SCRIPTS -->
+  <div th:replace="~{fragments/scripts :: scripts}"></div>
+
+  <script src="/js/dashboard.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const chartDataContainer = document.getElementById("lab-chart-data");
+      const chartElements = chartDataContainer
+        ? chartDataContainer.querySelectorAll(":scope > div")
+        : [];
+
+      const labs = Array.from(chartElements).map(element => ({
+        domain: element.dataset.domain || "Sin dominio",
+        title: element.dataset.title || "Laboratorio",
+        date: element.dataset.date || "",
+        hours: Number(element.dataset.hours || 0),
+        competencies: Number(element.dataset.competencies || 0),
+        tools: Number(element.dataset.tools || 0)
+      }));
+
+      if (!labs.length) {
+        console.warn("No se encontraron laboratorios para generar los gráficos.");
+        return;
+      }
+
+      if (typeof Chart === "undefined") {
+        console.error("Chart.js no está cargado. Verifica fragments/scripts.html.");
+        return;
+      }
+
+      const domainTotals = {};
+
+      labs.forEach(lab => {
+        if (!domainTotals[lab.domain]) {
+          domainTotals[lab.domain] = {
+            laboratories: 0,
+            competencies: 0,
+            tools: 0
+          };
+        }
+
+        domainTotals[lab.domain].laboratories += 1;
+        domainTotals[lab.domain].competencies += lab.competencies;
+        domainTotals[lab.domain].tools += lab.tools;
+      });
+
+      const domainLabels = Object.keys(domainTotals);
+      const shorten = (label, max = 25) =>
+        label.length > max ? label.substring(0, max - 3) + "..." : label;
+
+      const chartLabels = domainLabels.map(label => shorten(label));
+      const laboratoryData = domainLabels.map(
+        domain => domainTotals[domain].laboratories
+      );
+      const competencyData = domainLabels.map(
+        domain => domainTotals[domain].competencies
+      );
+      const toolData = domainLabels.map(
+        domain => domainTotals[domain].tools
+      );
+
+      Chart.defaults.color = "#b8c2d8";
+      Chart.defaults.font.family = "Arial, sans-serif";
+
+      const gridColor = "rgba(255,255,255,0.09)";
+      const palette = [
+        "#00d2ff",
+        "#7c4dff",
+        "#00e6a8",
+        "#ffb547",
+        "#ff5470",
+        "#4285f4",
+        "#b967ff"
+      ];
+
+      // Si dashboard.js ya creó gráficos con estos mismos canvas, se destruyen
+      // antes de crear las versiones basadas en los datos reales.
+      ["domainChart", "skillsChart", "radarChart", "timelineChart"].forEach(id => {
+        const canvas = document.getElementById(id);
+        if (canvas && Chart.getChart(canvas)) {
+          Chart.getChart(canvas).destroy();
+        }
+      });
+
+      // 1. Laboratorios por dominio
+      const domainCanvas = document.getElementById("domainChart");
+      if (domainCanvas) {
+        new Chart(domainCanvas, {
+          type: "bar",
+          data: {
+            labels: chartLabels,
+            datasets: [{
+              label: "Laboratorios",
+              data: laboratoryData,
+              backgroundColor: "rgba(0, 210, 255, 0.65)",
+              borderColor: "#00d2ff",
+              borderWidth: 1,
+              borderRadius: 7
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  title: items => domainLabels[items[0].dataIndex]
+                }
+              }
+            },
+            scales: {
+              x: {
+                ticks: { maxRotation: 35, minRotation: 0 },
+                grid: { display: false }
+              },
+              y: {
+                beginAtZero: true,
+                ticks: { precision: 0 },
+                grid: { color: gridColor }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. Competencias por dominio
+      const skillsCanvas = document.getElementById("skillsChart");
+      if (skillsCanvas) {
+        new Chart(skillsCanvas, {
+          type: "doughnut",
+          data: {
+            labels: domainLabels,
+            datasets: [{
+              label: "Competencias registradas",
+              data: competencyData,
+              backgroundColor: domainLabels.map((_, index) => palette[index % palette.length]),
+              borderColor: "#111827",
+              borderWidth: 3,
+              hoverOffset: 8
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: { padding: 14, usePointStyle: true }
+              }
+            },
+            cutout: "58%"
+          }
+        });
+      }
+
+      // 3. Herramientas por dominio
+      const radarCanvas = document.getElementById("radarChart");
+      if (radarCanvas) {
+        new Chart(radarCanvas, {
+          type: "radar",
+          data: {
+            labels: chartLabels,
+            datasets: [{
+              label: "Herramientas registradas",
+              data: toolData,
+              backgroundColor: "rgba(124, 77, 255, 0.20)",
+              borderColor: "#9b7aff",
+              pointBackgroundColor: "#00d2ff",
+              pointBorderColor: "#ffffff",
+              pointRadius: 4,
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: {
+                callbacks: {
+                  title: items => domainLabels[items[0].dataIndex]
+                }
+              }
+            },
+            scales: {
+              r: {
+                beginAtZero: true,
+                ticks: {
+                  precision: 0,
+                  backdropColor: "transparent"
+                },
+                grid: { color: gridColor },
+                angleLines: { color: gridColor },
+                pointLabels: {
+                  color: "#b8c2d8",
+                  font: { size: 10 }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 4. Horas prácticas por laboratorio, ordenadas por fecha
+      const chronologicalLabs = [...labs].sort((a, b) => {
+        const dateComparison = a.date.localeCompare(b.date);
+        return dateComparison !== 0
+          ? dateComparison
+          : a.title.localeCompare(b.title);
+      });
+
+      const timelineCanvas = document.getElementById("timelineChart");
+      if (timelineCanvas) {
+        new Chart(timelineCanvas, {
+          type: "line",
+          data: {
+            labels: chronologicalLabs.map(lab => shorten(lab.title, 28)),
+            datasets: [{
+              label: "Horas prácticas",
+              data: chronologicalLabs.map(lab => lab.hours),
+              borderColor: "#00e6a8",
+              backgroundColor: "rgba(0, 230, 168, 0.13)",
+              pointBackgroundColor: "#00e6a8",
+              pointBorderColor: "#ffffff",
+              pointRadius: 5,
+              pointHoverRadius: 7,
+              borderWidth: 3,
+              fill: true,
+              tension: 0.3
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: {
+                callbacks: {
+                  title: items => chronologicalLabs[items[0].dataIndex].title
+                }
+              }
+            },
+            scales: {
+              x: {
+                ticks: { maxRotation: 55, minRotation: 25 },
+                grid: { display: false }
+              },
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: "Horas" },
+                ticks: { precision: 0 },
+                grid: { color: gridColor }
+              }
+            }
+          }
+        });
+      }
+
+      // 5. Mapa de competencias: muestra cantidades, no porcentajes de dominio.
+      const skillMap = document.getElementById("skillMapRows");
+      if (skillMap) {
+        const maxCompetencies = Math.max(...competencyData, 1);
+        skillMap.replaceChildren();
+
+        domainLabels.forEach(domain => {
+          const count = domainTotals[domain].competencies;
+          const relativeWidth = Math.round((count / maxCompetencies) * 100);
+
+          const row = document.createElement("div");
+          row.className = "mb-4";
+
+          const header = document.createElement("div");
+          header.className = "d-flex justify-content-between align-items-center gap-3 mb-2";
+
+          const name = document.createElement("span");
+          name.className = "fw-semibold";
+          name.textContent = domain;
+
+          const amount = document.createElement("span");
+          amount.className = "text-info text-nowrap";
+          amount.textContent = count + " competencias";
+
+          header.append(name, amount);
+
+          const progress = document.createElement("div");
+          progress.className = "progress";
+          progress.style.height = "10px";
+          progress.style.background = "rgba(255,255,255,0.08)";
+
+          const bar = document.createElement("div");
+          bar.className = "progress-bar";
+          bar.style.width = relativeWidth + "%";
+          bar.style.background = "linear-gradient(90deg, #00d2ff, #7c4dff)";
+          bar.setAttribute("role", "progressbar");
+          bar.setAttribute("aria-valuenow", String(relativeWidth));
+          bar.setAttribute("aria-valuemin", "0");
+          bar.setAttribute("aria-valuemax", "100");
+
+          progress.appendChild(bar);
+          row.append(header, progress);
+          skillMap.appendChild(row);
+        });
+      }
+
+      console.log("Dashboard de ciberseguridad cargado:", {
+        laboratorios: labs.length,
+        dominios: domainLabels.length,
+        horasPracticas: labs.reduce((total, lab) => total + lab.hours, 0)
+      });
+    });
+  </script>
+
+</body>
+</html>
